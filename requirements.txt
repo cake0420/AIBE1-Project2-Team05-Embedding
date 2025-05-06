@@ -6,3 +6,4 @@ transformers
 scikit-learn
 scipy
 numpy
+gunicorn==21.2.0

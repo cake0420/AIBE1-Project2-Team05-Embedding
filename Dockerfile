@@ -19,13 +19,9 @@ COPY . .
 ENV PORT=5000
 ENV HOST=0.0.0.0
 
-# healthcheck 추가
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
+# 헬스체크 추가
+HEALTHCHECK --interval=30s --timeout=30s --start-period=60s --retries=3 \
   CMD curl -f http://localhost:${PORT}/ || exit 1
 
-# Flask 앱 실행
-# 시작 스크립트에 실행 권한 부여
-RUN chmod +x start.sh
-
-# 시작 스크립트를 통해 애플리케이션 실행
-CMD ["./start.sh"]
+# 직접 Python으로 실행
+CMD ["python", "api/index.py"]
