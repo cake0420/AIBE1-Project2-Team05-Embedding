@@ -105,6 +105,7 @@ def word_similarity():
             sigungu_code = profile.get("sigungucode")
             sigunguname = profile.get("sigunguname")
             nickname = profile.get('nickname')
+            contactLink = profile.get("contactLink")
 
             if not other_tags:
                 continue
@@ -123,6 +124,7 @@ def word_similarity():
                         "profileTag": ", ".join(other_tags),
                         "profileImageUrl": profile_image_url,
                         "similarity": similarity,
+                        "contactLink" : contactLink,
                     })
             except Exception as e:
                 logger.error(f"Error processing profile: {str(e)}")
