@@ -60,7 +60,7 @@ def hello():
 
 @app.route('/word-similarity', methods=['POST'])
 @cross_origin(
-    origins=["http://localhost:8080", "https://dev-linkup.duckdns.org"],
+    origins=["http://localhost:8080", "https://backend.linkup.o-r.kr/"],
     methods=["POST"],
     allow_headers=["Content-Type"]
 )
