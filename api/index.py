@@ -114,7 +114,7 @@ def word_similarity():
                 other_embeds = model.encode(other_tags, convert_to_tensor=True)
                 other_mean = other_embeds.mean(dim=0)
                 similarity = util.cos_sim(query_mean, other_mean).item()
-                if similarity > 0.5:
+                if similarity > 0.7:
                     results.append({
                         "areacode": areacode,
                         "areaName": area_name,
